@@ -1,6 +1,6 @@
 # LinkedIn Learning VS Code Theme (Lignt/Dark)
 
-Author: [Morten Rand-Hendriksen](https://github.com/mor10) for [LinkedIn Learning](https://linkedin.com/learning)
+![LinkedIn Learning VS Code Theme](images/linkedinlearning-vscode-theme.png)
 
 Accessible light and dark variant theme for VS Code created to improve accessibility when displaying code in LinkedIn Learning courses and in GitHub Codespaces. The dark variant is the default theme used for LinkedIn Learning exercise files and Codespaces.
 
