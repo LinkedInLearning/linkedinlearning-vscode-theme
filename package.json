@@ -38,19 +38,19 @@
   "contributes": {
     "themes": [
       {
-        "label": "LinkedIn Learning Dark Default",
+        "label": "LinkedIn Learning Dark",
         "uiTheme": "vs-dark",
         "path": "./themes/linkedinlearning-dark-color-theme.json"
       },
       {
-        "label": "LinkedIn Learning Theme Light",
+        "label": "LinkedIn Learning Light",
         "uiTheme": "vs",
         "path": "./themes/linkedinlearning-light-color-theme.json"
       }
     ],
     "configuration": {
       "defaults": {
-        "workbench.colorTheme": "LinkedIn Learning dark"
+        "workbench.colorTheme": "LinkedIn Learning Dark"
       }
     }
   }
