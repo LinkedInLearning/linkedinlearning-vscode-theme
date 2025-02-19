@@ -1,0 +1,57 @@
+{
+  "name": "linkedinlearning-vscode-theme",
+  "displayName": "LinkedIn Learning Theme",
+  "description": "Accessible light and dark variant theme for VS Code",
+  "version": "1.0.0",
+  "publisher": "linkedinlearning",
+  "author": {
+    "name": "mor10",
+    "url": "https://github.com/mor10"
+  },
+  "license": "MIT",
+  "icon": "images/lil-social-bug.png",
+  "galleryBanner": {
+    "color": "#0072b1",
+    "theme": "dark"
+  },
+  "homepage": "https://github.com/linkedinlearning/linkedinlearning-vscode-theme/blob/main/README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/linkedinlearning/linkedinlearning-vscode-theme"
+  },
+  "bugs": {
+    "url": "https://github.com/linkedinlearning/linkedinlearning-vscode-theme/issues"
+  },
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "light",
+    "dark",
+    "accessibility",
+    "linkedinlearning"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "LinkedIn Learning Dark Default",
+        "uiTheme": "vs-dark",
+        "path": "./themes/linkedinlearning-dark-color-theme.json"
+      },
+      {
+        "label": "LinkedIn Learning Theme Light",
+        "uiTheme": "vs",
+        "path": "./themes/linkedinlearning-light-color-theme.json"
+      }
+    ],
+    "configuration": {
+      "defaults": {
+        "workbench.colorTheme": "LinkedIn Learning dark"
+      }
+    }
+  }
+}
