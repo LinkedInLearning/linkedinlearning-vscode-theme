@@ -1,4 +1,4 @@
-# LinkedIn Learning VS Code Theme (Lignt/Dark)
+# LinkedIn Learning VS Code Theme (Light/Dark)
 
 ![LinkedIn Learning VS Code Theme](images/linkedinlearning-vscode-theme.png)
 
