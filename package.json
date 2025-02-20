@@ -9,7 +9,7 @@
     "url": "https://github.com/mor10"
   },
   "license": "MIT",
-  "icon": "images/lil-social-bug.png",
+  "icon": "icon.png",
   "galleryBanner": {
     "color": "#0072b1",
     "theme": "dark"
