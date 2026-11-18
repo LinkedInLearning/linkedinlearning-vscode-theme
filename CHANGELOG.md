@@ -11,9 +11,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Credential-free validation and VSIX packaging for pull requests and `main`.
 - Approval-gated publishing to Open VSX and the VS Code Marketplace, with passwordless authentication for both registries.
+- Dependabot monitoring for updates to the extension packaging tool.
 
 ### Fixed
 
+- Updated packaging dependencies to address the minimatch denial-of-service advisory GHSA-g3hv-75wg-m249.
 - Removed an invalid configuration contribution; installing the extension leaves the user's selected theme unchanged.
 - Excluded development files and source artwork from the extension package.
 - Clarified that contrast varies instead of claiming universal WCAG AAA compliance.
