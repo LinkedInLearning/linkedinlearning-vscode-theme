@@ -51,10 +51,15 @@
     "package": "npm run validate && vsce package --no-dependencies --out theme.vsix"
   },
   "devDependencies": {
-    "@vscode/vsce": "4.1.1",
+    "@vscode/vsce": "4.1.2-0",
     "jsonc-parser": "3.3.1",
     "ovsx": "1.4.0",
     "prettier": "3.10.1"
+  },
+  "overrides": {
+    "ovsx": {
+      "@vscode/vsce": "$@vscode/vsce"
+    }
   },
   "contributes": {
     "themes": [
