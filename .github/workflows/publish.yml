@@ -53,12 +53,9 @@ jobs:
         with:
           name: theme-vsix
       - run: sha256sum --check theme.vsix.sha256
-      - name: Check Open VSX namespace ownership and credential
+      - name: Check Open VSX namespace ownership
         if: github.event_name == 'release' || inputs.registry != 'marketplace'
-        env:
-          OVSX_PAT: ${{ secrets.OVSX_PAT }}
         run: |
-          test -n "$OVSX_PAT" || { echo "::error::Set OVSX_PAT in the publishing environment."; exit 1; }
           node --input-type=module -e '
             const response = await fetch("https://open-vsx.org/api/linkedinlearning");
             if (!response.ok) throw new Error(`Namespace lookup failed: ${response.status}`);
@@ -70,6 +67,4 @@ jobs:
         run: npm exec --no -- vsce publish --packagePath theme.vsix --oidc
       - name: Publish the same VSIX to Open VSX
         if: github.event_name == 'release' || inputs.registry != 'marketplace'
-        env:
-          OVSX_PAT: ${{ secrets.OVSX_PAT }}
-        run: npm exec --no -- ovsx publish theme.vsix
+        run: npm exec --no -- ovsx publish theme.vsix --trusted-publishing
