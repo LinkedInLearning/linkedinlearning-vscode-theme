@@ -1,0 +1,50 @@
+name: Validate and package
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_call:
+    inputs:
+      expected-version:
+        type: string
+        default: ""
+      release-tag:
+        type: string
+        default: ""
+      publish-ref:
+        type: string
+        default: ""
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+          package-manager-cache: false
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npm run check
+        env:
+          EXPECTED_VERSION: ${{ inputs.expected-version }}
+          RELEASE_TAG: ${{ inputs.release-tag }}
+          PUBLISH_REF: ${{ inputs.publish-ref }}
+      - run: npm run package
+      - run: sha256sum theme.vsix > theme.vsix.sha256
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: theme-vsix
+          path: |
+            theme.vsix
+            theme.vsix.sha256
+          if-no-files-found: error
+          retention-days: 14

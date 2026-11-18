@@ -35,6 +35,27 @@
     "accessibility",
     "linkedinlearning"
   ],
+  "files": [
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "themes/*.json",
+    "icon.png",
+    "images/linkedinlearning-vscode-theme.png"
+  ],
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "test": "node --test",
+    "format:check": "prettier --check package.json scripts test .github README.md CONTRIBUTING.md CHANGELOG.md",
+    "check": "npm run format:check && npm test && npm run validate",
+    "package": "npm run validate && vsce package --no-dependencies --out theme.vsix"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "4.1.1",
+    "jsonc-parser": "3.3.1",
+    "ovsx": "1.4.0",
+    "prettier": "3.10.1"
+  },
   "contributes": {
     "themes": [
       {
@@ -47,11 +68,6 @@
         "uiTheme": "vs",
         "path": "./themes/linkedinlearning-light-color-theme.json"
       }
-    ],
-    "configuration": {
-      "defaults": {
-        "workbench.colorTheme": "LinkedIn Learning Dark"
-      }
-    }
+    ]
   }
 }
