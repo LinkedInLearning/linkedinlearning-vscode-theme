@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Credential-free validation and VSIX packaging for pull requests and `main`.
-- Approval-gated publishing to Open VSX and the VS Code Marketplace, with passwordless Marketplace authentication.
+- Approval-gated publishing to Open VSX and the VS Code Marketplace, with passwordless authentication for both registries.
 
 ### Fixed
 

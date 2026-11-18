@@ -34,7 +34,9 @@ Publishing requires:
 
 - Required reviewers configured on the `publishing` environment. Referencing an environment in workflow YAML does not itself enforce approval.
 - [Marketplace Trusted Publishing](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#publish-with-github-actions-and-trusted-publishing) configured for the repository, workflow `publish.yml`, and environment `publishing`. Authentication uses OIDC rather than a stored Marketplace PAT.
-- Verified ownership of the Open VSX namespace and a dedicated publishing token saved as the `OVSX_PAT` environment secret.
+- Verified ownership of the Open VSX namespace and [Open VSX Trusted Publishing](https://github.com/eclipse-openvsx/openvsx/blob/master/cli/README.md#trusted-publishing) registered for the extension, repository, workflow `publish.yml`, and environment `publishing`. An extension must already be published and active before its trusted publisher can be registered.
+
+Both registries authenticate with short-lived OIDC credentials; no publishing token secrets are required. The Open VSX command explicitly requires trusted publishing and fails if an OIDC token cannot be obtained.
 
 ### Publishing a new version
 
